@@ -1,13 +1,21 @@
 // Index Router
 
 import { Router } from 'express';
-import { helloWorld } from '../controllers/index.controller.server.js';
+import { displayHomePage, 
+    displayAboutMePage,
+    displayServicesPage,
+    displayProjectsPage,
+    displayContactPage} from '../controllers/index.controller.server.js';
 
 // instantiate the router
 const router = Router();
 
 //add middleware to connect application
-router.get('/',helloWorld);
-router.get('/hello',helloWorld);
+router.get('/',displayHomePage);
+router.get('/home',displayHomePage);
+router.get('/aboutMe', displayAboutMePage);
+router.get('/services', displayServicesPage);
+router.get('/projects', displayProjectsPage);
+router.get('/contact', displayContactPage);
 
 export default router;
